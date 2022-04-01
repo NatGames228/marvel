@@ -27,7 +27,11 @@ class MarvelService {
   _transformCharacter = (result) => {
     return {
       name: result.name,
-      description: result.description,
+      description: result.description ? 
+        result.description.length >= 210 ?
+          `${result.description.slice(0, 210)}...`
+          : result.description 
+        : 'There is no description for this character',
       thumbnail: result.thumbnail.path + '.' + result.thumbnail.extension,
       homepage: result.urls[0].url,
       wiki: result.urls[1].url
