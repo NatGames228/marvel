@@ -35,7 +35,8 @@ class MarvelService {
         : 'There is no description for this character',
       thumbnail: result.thumbnail.path + '.' + result.thumbnail.extension,
       homepage: result.urls[0].url,
-      wiki: result.urls[1].url
+      wiki: result.urls[1].url,
+      comics: result.comics.items,
     }
   }
 }
